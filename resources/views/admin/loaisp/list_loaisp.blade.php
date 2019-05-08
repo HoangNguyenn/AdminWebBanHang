@@ -5,7 +5,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Danh sách User</h3>
+                        <h3 class="box-title">List Loại SP</h3>
                     </div>
                     @if(session('thongbao'))
                         <div class="alert alert-success">
@@ -17,24 +17,18 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Picture</th>
-                                <th>Role</th>
+                                <th>Tên Loại</th>
                                 <th>Created_at</th>
 
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($user as $us)
+                            @foreach($loaisp as $loai)
                                 <tr>
-                                    <td>{{$us-> name}}</td>
-                                    <td>{{$us->email}}</td>
-                                    <td>{{$us->image}}</td>
-                                    <td>@if($us->role ==0) {{"Thường"}} @else {{"Admin"}}@endif</td>
-                                    <td>{{$us->created_at}}</td>
-                                    <td><a href="admin/user/edit_user/{{$us->id}}">Edit</a></td>
-                                    <td><a onclick="return confirm('Bạn có muốn xóa?')" href="admin/user/delete_user/{{$us->id}}">Delete</a></td>
+                                    <td>{{$loai->TenLoai}}</td>
+                                    <td>{{$loai->created_at}}</td>
+                                    <td><a href="admin/loaisp/edit_loaisp/{{$loai->id}}">Edit</a></td>
+                                    <td><a onclick="return confirm('Bạn có muốn xóa?')" href="admin/loaisp/delete_loaisp/{{$loai->id}}">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

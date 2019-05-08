@@ -1,4 +1,4 @@
-@extends('admin.admin')
+@extends('admin.layout.index')
 @section('content')
     <section class="content">
         <!-- Info boxes -->
