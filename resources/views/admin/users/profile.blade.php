@@ -15,17 +15,17 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>Followers</b> <a class="pull-right">1,322</a>
+                                <b>Lượt yêu thích</b> <a class="pull-right">111</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Following</b> <a class="pull-right">543</a>
+                                <b>Lượt Theo dõi</b> <a class="pull-right">222</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Friends</b> <a class="pull-right">13,287</a>
+                                <b>Lượt bình chọn</b> <a class="pull-right">333</a>
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                        <a href="#" class="btn btn-primary btn-block"><b>SURE</b></a>
                     </div>
                     <!-- /.box-body -->
                 </div>

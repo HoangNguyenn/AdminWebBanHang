@@ -21,6 +21,10 @@
                 <input type="text" name="name" placeholder="name" class="form-control" value="{{$user->name}}" />
             </div>
             <div class="form-group">
+                <label>username</label>
+                <input type="text" name="username" placeholder="name" class="form-control" value="{{$user->username}}" />
+            </div>
+            <div class="form-group">
                 <label>email</label>
                 <input type="email" name="email" placeholder="email" class="form-control" value="{{$user->email}}" disabled />
             </div>

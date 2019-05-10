@@ -21,24 +21,28 @@
                 <input type="text" name="name" placeholder="name" class="form-control" value="{{$user->name}}" />
             </div>
             <div class="form-group">
-                <label>email</label>
+                <label>User name</label>
+                <input type="text" name="username" placeholder="name" class="form-control" value="{{$user->username}}" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
                 <input type="email" name="email" placeholder="email" class="form-control" value="{{$user->email}}" disabled />
             </div>
             <div class="form-group">
-                <label>password</label>
+                <label>Password</label>
                 <input type="password" name="password" placeholder="password" class="form-control" value="{{$user->password}}" />
             </div>
             <div class="form-group">
-                <label>comfirm</label>
+                <label>Confirm</label>
                 <input type="password" name="confirm" placeholder="confirm password" class="form-control" value="{{$user->password}}" />
             </div>
 
             <div class="form-group" >
-                <label>hình ảnh</label>
+                <label>Hình ảnh</label>
                 <input  type="file" name="image"  placeholder="tải ảnh lên" class="form-control" value="{{$user->image}}" />
             </div>
             <div class="form-group">
-                <label>quyền hạn</label>
+                <label>Quyền hạn</label>
                 <p></p>
 
                 @if($user->role==0)

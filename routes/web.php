@@ -14,6 +14,7 @@
 Route::get('home', function () {
     return view('home');
 });
+Route::get('param','ParamController@showparam');
 
 Route::get('home','HomeController@index');
 
@@ -28,7 +29,7 @@ Route::get('edit/{id}','UserController@getEdit');
 Route::post('edit/{id}','UserController@postEdit');
 Route::get('forgot','UserController@getForgot');
 
-Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
+Route::group(['prefix' => 'admin'], function() {
     Route::group(['prefix' => 'user'], function() {
         Route::get('list_user',['as'=>'list_user','uses'=>'UserController@getList']);
         Route::get('add_user',['as'=>'add_user','uses'=>'UserController@getAddUser']);

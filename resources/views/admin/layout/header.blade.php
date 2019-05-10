@@ -214,19 +214,19 @@
                         </li>
                     </ul>
                 </li>
-                <!-- User Account: style can be found in dropdown.less -->
+                <!-- User Account: style can be found in dropdown.less {{Session::get('img')}}-->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="upload/{{Auth::user()->image}}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">{{Auth::user()->name}}</span>
+                        <img src="upload/{{Session::get('img')}}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{Session::get('name')}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="upload/{{Auth::user()->image}}" class="img-circle" alt="User Image">
+                            <img src="upload/{{Session::get('img')}}" class="img-circle" alt="User Image">
 
                             <p>
-                                {{Auth::user()->name}}
+                                {{Session::get('name')}}
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -248,10 +248,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="profile/{{Auth::user()->id}}" class="btn btn-default btn-flat">Profile</a>
+                                <a href="profile/{{Session::get('id')}}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-left">
-                                <a href="edit/{{Auth::user()->id}}" class="btn btn-default btn-flat">Edit</a>
+                                <a href="edit/{{Session::get('id')}}" class="btn btn-default btn-flat">Edit</a>
                             </div>
                             <div class="pull-right">
                                 <a href="logout" class="btn btn-default btn-flat">Sign out</a>

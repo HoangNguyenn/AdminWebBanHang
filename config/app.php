@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
+
 return [
 
     /*
@@ -174,6 +179,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Nayjest\Grids\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Nayjest\LaravelDoctrineDBAL\ServiceProvider::class,
 
     ],
 
@@ -225,7 +233,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
+        'Grids' => Nayjest\Grids\Grids::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
+        'DBAL' => Nayjest\LaravelDoctrineDBAL\Facade\DBAL::class,
     ],
 
 ];

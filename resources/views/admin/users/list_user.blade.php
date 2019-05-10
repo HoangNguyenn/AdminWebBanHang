@@ -18,6 +18,7 @@
                             <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>User Name</th>
                                 <th>Email</th>
                                 <th>Picture</th>
                                 <th>Role</th>
@@ -29,6 +30,7 @@
                             @foreach($user as $us)
                                 <tr>
                                     <td>{{$us-> name}}</td>
+                                    <td>{{$us-> username}}</td>
                                     <td>{{$us->email}}</td>
                                     <td>{{$us->image}}</td>
                                     <td>@if($us->role ==0) {{"Thường"}} @else {{"Admin"}}@endif</td>

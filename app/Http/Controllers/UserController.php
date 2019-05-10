@@ -36,6 +36,7 @@ class UserController extends Controller
         $this->validate($request,
             [
                 'name'=>'required',
+                'username'=>'required',
                 'email'=>'required|unique:users,email',
                 'password'=>'required',
                 'confirm'=>'required|same:password',
@@ -43,6 +44,7 @@ class UserController extends Controller
             ],
             [
                 'name.required'=>'Mời bạn nhập Name',
+                'username.required'=>'Mời bạn nhập Name',
                 'email.required'=>'Mời bạn nhập Name',
                 'email.unique'=>'Email đã tồn tại',
                 'password.required'=>'Mời bạn nhập Password',
@@ -52,8 +54,9 @@ class UserController extends Controller
             ]);
         $user=new User();
         $user->name=$request->name;
+        $user->username=$request->username;
         $user->email=$request->email;
-        $user->password=bcrypt($request->password);
+        $user->password=($request->password);
 
         if($request->hasFile('image'))
         {
@@ -82,19 +85,22 @@ class UserController extends Controller
         $this->validate($request,
             [
                 'name'=>'required',
+                'username'=>'require',
                 'password'=>'required',
                 'confirm'=>'required|same:password',
                 'image'=>'required',
             ],
             [
                 'name.required'=>'Mời bạn nhập Name',
+                'username.require'=>'Mời bạn nhập user name',
                 'password.required'=>'Mời bạn nhập Password',
                 'confirm.required'=>'Mời bạn nhập Confirm Password',
                 'confirm.same'=>'Mật khẩu không giống nhau',
                 'image.required'=>'Mời bạn chọn hình cho User',
             ]);
         $user->name=$request->name;
-        $user->password=bcrypt($request->password);
+        $user->username=$request->username;
+        $user->password=($request->password);
         if($request->hasFile('image'))
         {
             $file=$request->file('image');
@@ -126,14 +132,26 @@ class UserController extends Controller
     }
     public function postLogin(Request $request)
     {
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->pass]))
+
+        $usera =User::all();
+        foreach ($usera as $user)
         {
-            return view('home');
+            if ($user->username=$request->username && $user->password==$request->pass)
+            {
+                $request->session()->put('id', $user->id);
+                $request->session()->put('name', $user->name);
+                $request->session()->put('img', $user->image);
+
+                return redirect('admin/user/list_user');
+            }
+            else
+            {
+                echo 'sai';
+            }
+
         }
-        else
-        {
-            return redirect('dangnhap')->with('thongbao','Sai tài khoản hoặc mật khẩu');
-        }
+
+
     }
     public function getregister()
     {
@@ -143,18 +161,19 @@ class UserController extends Controller
     {
         $this->validate($request,
             [
-                'email'=>'unique:users,email',
+                'username'=>'unique:users,username',
                 'confirm'=>'same:password',
             ],
             [
-                'email.unique'=>'Email đã tồn tại',
+                'username.unique'=>'user name đã tồn tại',
                 'confirm.same'=>'Password không giống nhau',
             ]);
         $user=new User();
         $user->name=$request->name;
+        $user->username=$request->username;
         $user->email=$request->email;
         $user->role=0;
-        $user->password=bcrypt($request->password);
+        $user->password=($request->password);
         $user->save();
         return redirect('login');
     }

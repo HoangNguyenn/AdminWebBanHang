@@ -21,6 +21,10 @@
                 <input type="text" name="name" placeholder="name" class="form-control" value="" />
             </div>
             <div class="form-group">
+                <label>username</label>
+                <input type="text" name="username" placeholder="username" class="form-control" value="" />
+            </div>
+            <div class="form-group">
                 <label>email</label>
                 <input type="email" name="email" placeholder="email" class="form-control" value="" />
             </div>
@@ -40,14 +44,14 @@
 
 
             <div class="form-group">
-                <label>quyền hạn</label>
+                <label>Quyền hạn</label>
                 <p></p>
                 <input type="radio" name="quyen" checked="" value="0">Người dùng
                 <input type="radio" name="quyen" value="1">Admin
             </div>
             <div class="form-group">
                 <div class="submit">
-                    <input type="submit" class="btn btn-primary" name="btnsubmit" value="Thêm user" />
+                    <input type="submit" class="btn btn-primary" name="btnsubmit" value="Thêm User" />
                 </div>
             </div>
         </form>
